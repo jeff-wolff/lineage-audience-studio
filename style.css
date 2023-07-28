@@ -415,7 +415,7 @@ ul.social-nav a.linkedin:hover {
 @media (min-width: 1280px) {
   .hero__inner {
     margin-right: var(--gutter-lg);
-    margin-left: 10vh;
+    margin-left: 20vh;
     margin-top: 14vh;
   }
 }
