@@ -74,6 +74,46 @@ function init() {
     }
 
 
+
+    function closeOnEscape(event) {
+        const escapeKeyCode = 27;
+        if (event.keyCode === escapeKeyCode) {
+            if (navMenu.classList.contains('--open') && contactForm.classList.contains('--open')) {
+                closeNav();
+            }  else {
+                if (navMenu.classList.contains('--open')) {
+                    closeNav();
+                }
+                if (contactForm.classList.contains('--open')) {
+                    closeContactForm();
+                }
+            }
+        }
+    }
+
+    window.addEventListener('keydown', closeOnEscape);
+
+
+    const handleSubmit = (event) => {
+        event.preventDefault();
+      
+        const myForm = event.target;
+        const formData = new FormData(myForm);
+        
+        fetch("/", {
+          method: "POST",
+          headers: { "Content-Type": "application/x-www-form-urlencoded" },
+          body: new URLSearchParams(formData).toString(),
+        })
+          .then(() => alert('Form submitted successfully'))
+          .catch((error) => alert(error));
+      };
+      
+      document
+        .querySelector("form")
+        .addEventListener("submit", handleSubmit);
+
+
 }
 
 window.addEventListener('load', init);
