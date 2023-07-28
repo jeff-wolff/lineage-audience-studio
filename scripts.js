@@ -105,8 +105,11 @@ function init() {
           headers: { "Content-Type": "application/x-www-form-urlencoded" },
           body: new URLSearchParams(formData).toString(),
         })
-          .then(() => alert('Form submitted successfully'))
-          .catch((error) => alert(error));
+        .then(() => {
+            alert('Form submitted successfully');
+            myForm.reset(); // Reset the form inputs
+        })
+        .catch((error) => alert(error));
       };
       
       document
