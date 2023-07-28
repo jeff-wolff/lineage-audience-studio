@@ -5,6 +5,11 @@ const navMenu = document.querySelector('.nav');
 const menuItems = document.querySelectorAll('.menu-item');
 const socialMenu = document.querySelector('.social-nav');
 
+const contactBtn = document.querySelector('button#contact');
+const contactCloseBtn = document.querySelector('button#contactClose');
+
+const contactForm = document.querySelector('.contact-form');
+
 let header = document.querySelector('header'),
 body = document.querySelector('body');
 
@@ -22,13 +27,11 @@ function init() {
     });
 
     // Navigation
-    menuBtn.addEventListener('click', () => {
-        openNav();
-    });
-  
-    menuCloseBtn.addEventListener('click', () => {
-        closeNav();    
-    });
+    menuBtn.addEventListener('click', openNav);
+    menuCloseBtn.addEventListener('click', closeNav);
+
+    
+    // menuCloseBtn.addEventListener('click', closeNav);
 
     function openNav() {
         body.style.overflowY = 'hidden';
@@ -45,10 +48,23 @@ function init() {
     function closeNav() {
         body.style.overflowY = 'visible';
         navMenu.classList.remove('--open');
-        
+        socialMenu.classList.remove('--fadein');
         menuItems.forEach((item) => {
             flipCard(item);
         });
+    };
+
+
+    // Contact Form
+    contactBtn.addEventListener('click', openContactForm);
+    contactCloseBtn.addEventListener('click', closeContactForm);
+
+    function openContactForm() {
+        contactForm.classList.add('--open');
+    };
+  
+    function closeContactForm() {
+        contactForm.classList.remove('--open');
     };
 
 

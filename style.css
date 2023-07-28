@@ -524,6 +524,7 @@ ul.social-nav a.linkedin:hover {
 }
 
 .contact-form {
+  transition: .4s all cubic-bezier(0, 0, 0, 1);
   position: absolute;
   top: calc(var(--header-height) + 8px);
   left: 0;
@@ -532,6 +533,8 @@ ul.social-nav a.linkedin:hover {
   width: 100%;
   height: 100%;
   padding: 30px;
+
+  transform: translateX(-100%);
 }
 @media (min-width: 768px) {
     .contact-form {
@@ -543,6 +546,10 @@ ul.social-nav a.linkedin:hover {
     left: 9px;
     padding: 140px;
   }
+}
+
+.contact-form.--open {
+    transform: translateX(0) !important;
 }
 
 .contact-form__title > img {
