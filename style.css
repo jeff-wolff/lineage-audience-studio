@@ -214,7 +214,7 @@ header .logo {
 
   position: absolute;
   top: 0;
-  right: 0;
+  right: 1px;
   width: 71px;
   height: 65px;
 }
