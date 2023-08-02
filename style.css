@@ -268,7 +268,7 @@ header .logo {
 }
 @media (min-width: 2560px) {
   .nav.--open > .container {
-    max-width: var(--container-width);
+    max-width: calc(var(--container-width) + 15px);
     margin-left: auto;
     margin-right: auto;
   }
