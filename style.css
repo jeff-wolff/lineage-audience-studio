@@ -41,9 +41,14 @@ body {
 }
 
 p {
-  font-size: 18.8px;
+  font-size: 15.8px;
   line-height: 1.25;
   letter-spacing: -0.01em;
+}
+@media (min-width: 1025px) {
+  p {
+    font-size: 18.8px;
+  }
 }
 
 input, textarea {
@@ -97,7 +102,7 @@ button.contact {
   transition: all 0.2s;
   /* width: fit-content; */
   height: auto;
-  padding: 14px 20px;
+  padding: 14px 23px;
   /* outline: none; */
   border: 1px solid white;
 }
@@ -387,7 +392,9 @@ header .logo {
   transition-delay: 0.3s;
 }
 
-ul.social-nav {
+
+
+.menu-end {
   transition: 1s all;
   opacity: 0;
   width: 100%;
@@ -398,11 +405,18 @@ ul.social-nav {
   align-items: center;
   justify-content: flex-end;
   height: 100px;
+  padding-right: 18px;
 }
-ul.social-nav.--fadein {
+@media (min-width: 1025px) {
+  .menu-end {
+    padding-right: 32px;
+  }
+}
+.menu-end.--fadein {
   opacity: 1;
   transition-delay: 0.75s;
 }
+
 ul.social-nav li {
   margin-right: 10px;
 }
@@ -432,37 +446,59 @@ ul.social-nav a.linkedin:hover {
 
 .hero {
   position: relative;
-  min-height: 400px;
+  min-height: 720px;
   height: calc(100vh - var(--header-height));
   overflow: hidden;
   display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+}
+@media (min-width: 768px) {
+  .hero {
+    flex-direction: row;
+    justify-content: flex-start;
+  }
 }
 
 .hero__inner {
-  margin-top: 20vh;
-  /* margin-right: var(--gutter); */
-  margin-left: 25px;
-  margin-right: 25px;
+  margin-top: 12vw;
+  
+  margin-left: calc(var(--gutter) * 1.5);
+  margin-right: calc(var(--gutter) * 1.5);
   max-width: var(--container-width);
 
-  display: flex;
-  justify-content: flex-start;
-  align-items: flex-start;
-
-  width: 100%;
   position: relative;
 }
-
-@media (min-width: 1280px) {
+@media (min-width: 390px) {
   .hero__inner {
-    margin-right: var(--gutter-lg);
-    margin-left: 6vw;
-    margin-top: 14vh;
+    margin-left: calc(var(--gutter) * 2);
+    margin-right: calc(var(--gutter) * 2);
   }
 }
-@media (min-width: 1920px) {
+@media (min-width: 428px) {
   .hero__inner {
-    margin-top: 20vh;
+    margin-left: calc(var(--gutter) * 2.5);
+    margin-right: calc(var(--gutter) * 2.5);
+  }
+}
+@media (min-width: 768px) {
+  .hero__inner {
+    margin-top: 0;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    
+    width: 100%;
+  }
+}
+@media (min-width: 1025px) {
+  .hero__inner {
+    margin-left: calc(var(--gutter-lg) * 2);
+  }
+}
+@media (min-width: 1280px) {
+  .hero__inner {
+    margin-left: 6vw;
   }
 }
 @media (min-width: 2560px) {
@@ -474,6 +510,19 @@ ul.social-nav a.linkedin:hover {
 
 .hero__content {
   max-width: 389px;
+  margin-left: auto;
+  margin-right: auto;
+}
+@media (min-width: 768px) {
+  .hero__content {
+    margin-left: 0;
+    max-width: 316px;
+  }
+}
+@media (min-width: 1024px) {
+  .hero__content {
+    max-width: 389px;
+  }
 }
 @media (min-width: 1280px) {
   .hero__content {
@@ -488,14 +537,22 @@ ul.social-nav a.linkedin:hover {
 
 .hero__heading {
   margin-top: 0;
-  margin-bottom: 40px;
+  margin-bottom: 24px;
 }
-
+@media (min-width: 1025px) {
+  .hero__heading {
+    margin-bottom: 40px;
+  }
+}
 .hero__content p {
-  margin: 0 0 40px;
   text-align: justify;
 }
 @media (min-width: 1025px) {
+  .hero__content p {
+    margin: 0 0 40px;
+  }
+}
+@media (min-width: 1280px) {
   .hero__content p {
     margin: 0 0 50px;
   }
@@ -521,6 +578,11 @@ ul.social-nav a.linkedin:hover {
   /*opacity: 0;*/
   overflow: hidden;
 }
+@media (max-width: 767px) {
+  .hero__video-wrap {
+    display: none;
+  }
+}
 
 .hero__video-wrap iframe,
 .hero__video-wrap video {
@@ -533,34 +595,52 @@ ul.social-nav a.linkedin:hover {
   -ms-transform: translate(-50%, -50%);
   transform: translate(-50%, -50%);
 }
-
+/* 
 @media (max-aspect-ratio: 16/9) {
   .hero__video-wrap iframe,
   .hero__video-wrap video {
     width: 177.78vh;
   }
-}
+} */
 
-@media (min-aspect-ratio: 16/9) {
+/* @media (min-aspect-ratio: 16/9) {
   .hero__video-wrap iframe,
   .hero__video-wrap video {
-    /* height = 100 * (9 / 16) = 56.25 */
+    height = 100 * (9 / 16) = 56.25
     height: 56.25vw;
   }
+} */
+
+
+.hero__mobile-video {
+  
+}
+@media (min-width: 768px) {
+  .hero__mobile-video {
+    display: none;
+  }  
 }
 
 .rainbow-swoosh {
   opacity: 0.6;
   display: none;
   position: fixed;
-  left: -27vw;
-  bottom: -20vw;
+  bottom: 0;
+  left: 0;
   width: 70vw;
   z-index: -1;
 }
 @media (min-width: 768px) {
   .rainbow-swoosh {
     display: block;
+    left: -19vw;
+    bottom: -18vw;
+  }
+}
+@media (min-width: 1024px) {
+  .rainbow-swoosh {
+    left: -27vw;
+    bottom: -28vw;
   }
 }
 

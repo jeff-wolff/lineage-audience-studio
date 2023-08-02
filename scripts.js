@@ -3,7 +3,7 @@ const menuCloseBtn = document.querySelector('#navClose');
 
 const navMenu = document.querySelector('.nav');
 const menuItems = document.querySelectorAll('.menu-item');
-const socialMenu = document.querySelector('.social-nav');
+const menuEnd = document.querySelector('.menu-end');
 
 const contactBtn = document.querySelector('button#contact');
 const contactCloseBtn = document.querySelector('button#contactClose');
@@ -41,14 +41,14 @@ function init() {
                 flipCard(item);
             });
             
-            socialMenu.classList.add('--fadein');
+            menuEnd.classList.add('--fadein');
         },50)
     };
   
     function closeNav() {
         body.style.overflowY = 'visible';
         navMenu.classList.remove('--open');
-        socialMenu.classList.remove('--fadein');
+        menuEnd.classList.remove('--fadein');
         menuItems.forEach((item) => {
             flipCard(item);
         });
