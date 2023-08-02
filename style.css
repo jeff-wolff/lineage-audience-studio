@@ -614,7 +614,8 @@ ul.social-nav a.linkedin:hover {
 
 
 .hero__mobile-video {
-  
+  min-height: 50vh;
+  /* background: red; */
 }
 @media (min-width: 768px) {
   .hero__mobile-video {
