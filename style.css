@@ -667,6 +667,12 @@ ul.social-nav a.linkedin:hover {
     bottom: -28vw;
   }
 }
+@media (max-height: 680px) {
+  .rainbow-swoosh {
+    left: -29vw;
+    bottom: -32vw;
+  }
+}
 
 .contact-form {
   z-index: 2;
