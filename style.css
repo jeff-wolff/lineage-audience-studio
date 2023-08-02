@@ -177,7 +177,7 @@ header .logo {
 
 #navOpen,
 #navClose {
-  transition: all 0.2s;
+  transition: color 0.2s, background 0.2s;
   height: 100%;
   display: flex;
   justify-content: center;
@@ -455,6 +455,7 @@ ul.social-nav a.linkedin:hover {
 }
 @media (min-width: 768px) {
   .hero {
+    min-height: 92vh;
     flex-direction: row;
     justify-content: flex-start;
   }
