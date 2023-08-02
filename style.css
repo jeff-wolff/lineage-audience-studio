@@ -99,7 +99,7 @@ hr.divider {
 }
 
 button.contact {
-  transition: all 0.2s;
+  transition: background 0.2s, filter 0.2s;
   /* width: fit-content; */
   height: auto;
   padding: 14px 23px;
