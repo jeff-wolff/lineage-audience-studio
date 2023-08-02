@@ -199,6 +199,7 @@ header .logo {
 #navClose:hover {
   background: var(--header-color);
   color: #fff;
+  opacity: 1;
 }
 #navOpen:active,
 #navClose:active {
@@ -256,6 +257,27 @@ header .logo {
   display: flex;
   justify-content: flex-end;
 }
+
+.nav.--open > .container {
+  margin-right: 0;
+}
+@media (min-width: 1025px) {
+  .nav.--open > .container {
+    
+  }
+}
+@media (min-width: 2560px) {
+  .nav.--open > .container {
+    max-width: var(--container-width);
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
+
+
+
+
+
 .nav.--open li {
   margin-bottom: 2px;
   text-align: right;
