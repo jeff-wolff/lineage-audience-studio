@@ -47,6 +47,11 @@ p {
 }
 @media (min-width: 1025px) {
   p {
+    font-size: clamp(0.99rem, calc(0.77rem + 0.34vw), 1.18rem); /* 15.8px - 18.8px */
+  }
+}
+@media (min-width: 1920px) {
+  p {
     font-size: 18.8px;
   }
 }
@@ -100,7 +105,8 @@ hr.divider {
 
 button.contact {
   transition: background 0.2s, filter 0.2s;
-  /* width: fit-content; */
+  width: 55%;
+  max-width: 300px;
   height: auto;
   padding: 14px 23px;
   /* outline: none; */
@@ -170,6 +176,12 @@ header .logo {
     padding-bottom: 14px;
   }
 }
+@media (min-width: 1025px) {
+  header .logo {
+    height: 94px;
+  }
+}
+
 
 .header__right {
   position: relative;
@@ -510,6 +522,9 @@ ul.social-nav a.linkedin:hover {
     display: flex;
     justify-content: flex-start;
     align-items: center;
+
+    margin-left: calc(var(--gutter-lg) * 1);
+    margin-right: 0;
     
     width: 100%;
   }
@@ -526,6 +541,7 @@ ul.social-nav a.linkedin:hover {
 }
 @media (min-width: 2560px) {
   .hero__inner {
+    padding-left: 3vw;
     margin-left: auto;
     margin-right: auto;
   }
@@ -539,20 +555,30 @@ ul.social-nav a.linkedin:hover {
 @media (min-width: 768px) {
   .hero__content {
     margin-left: 0;
-    max-width: 316px;
+    max-width: 255px;
+  }
+}
+@media (min-width: 810px) {
+  .hero__content {
+    max-width: 265px;
   }
 }
 @media (min-width: 1024px) {
   .hero__content {
-    max-width: 389px;
+    max-width: 345px;
   }
 }
 @media (min-width: 1280px) {
   .hero__content {
-    max-width: 489px;
+    max-width: 389px;
   }
 }
 @media (min-width: 1536px) {
+  .hero__content {
+    max-width: 489px;
+  }
+}
+@media (min-width: 1920px) {
   .hero__content {
     max-width: 589px;
   }
@@ -562,7 +588,8 @@ ul.social-nav a.linkedin:hover {
   margin-top: 0;
   margin-bottom: 24px;
 }
-@media (min-width: 1025px) {
+
+@media (min-width: 1920px) {
   .hero__heading {
     margin-bottom: 40px;
   }
@@ -572,10 +599,10 @@ ul.social-nav a.linkedin:hover {
 }
 @media (min-width: 1025px) {
   .hero__content p {
-    margin: 0 0 40px;
+    margin: 0 0 30px;
   }
 }
-@media (min-width: 1280px) {
+@media (min-width: 1920px) {
   .hero__content p {
     margin: 0 0 50px;
   }
@@ -657,14 +684,20 @@ ul.social-nav a.linkedin:hover {
 @media (min-width: 768px) {
   .rainbow-swoosh {
     display: block;
+    left: -27vw;
+    bottom: -28vw;
+  }
+}
+@media (min-height: 1024px) {
+  .rainbow-swoosh {
     left: -19vw;
     bottom: -18vw;
   }
 }
 @media (min-width: 1024px) {
   .rainbow-swoosh {
-    left: -27vw;
-    bottom: -28vw;
+    left: -29vw;
+    bottom: -29vw;
   }
 }
 @media (max-height: 680px) {
